@@ -1,0 +1,28 @@
+﻿* { font-family: 'Open Sans'; }
+a, a:visited, a:active, a:hover { color: #626262; }
+body { margin: 0px; padding: 0px; padding-top: 50px; }
+header { background-color: #FFFFFF; width: 100%; margin: 0px; padding: 0px; height: 50px; position: fixed; left: 0px; top: 0px; right: 0px; border-bottom: 1px #626262 solid; text-align: center; }
+	header .brand { float: left; width: 180px; border-right: solid 1px #E69485; }
+		header .brand .toggle { float: right; padding: 18px 5px; }
+	header .actions { float: right; padding: 5px 0px; }
+	header .user-data { font-weight: lighter; }
+		header .user-data strong { font-weight: bold; }
+	header .user-image { float: left; vertical-align: middle; padding: -3px; margin-top: -5px; margin-right: 5px; }
+		header .user-image img { width: 50px; }
+	header .user-submenu ul { background-color: #626262; }
+		header .user-submenu ul * { color: #FFFFFF; }
+	header .user-submenu .caret { background-color: #FFFFFF; color: #626262; padding-right: 25px; width: 50px; height: 20px; position: relative; margin-top: -20px; }
+
+.badge-overlap { position: absolute; margin-left: 10px !important; margin-top: -25px; border-radius: 1em; }
+.btn { font-weight: bold; padding: 8px 20px !important; color:#ffffff; }
+.btn-principal { text-transform: uppercase; }
+
+#Main { width: 180px; position: fixed; left: 0px; top: 0px; bottom: 0px; }
+.collapsed #Main { width: 50px; }
+	#Main.collapsed { width: 50px; }
+#Content { position: fixed; left: 180px; right: 0px; top: 50px; bottom: 0px; overflow: auto; }
+
+#nav-toggle span.fa-navicon, nav-toggle.active span.fa-close { transition: all .5s ease; position: absolute; }
+#nav-toggle span.fa-close, #nav-toggle.active span.fa-navicon { transform: rotate(-90deg); }
+#nav-toggle span.fa-navicon, #nav-toggle.active span.fa-close { transform: rotate(180deg); opacity: 0; }
+#nav-toggle span.fa-close, #nav-toggle.active span.fa-navicon { transform: rotate(0deg); opacity: 100; }
