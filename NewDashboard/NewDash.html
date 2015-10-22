@@ -17,8 +17,14 @@
 			$("#CollapseMenu").click(function () {
 				$("#Casare").toggleClass("toggle-closed");
 			});
-			$(".toggle-submenu").click(function () {
+			$(".toggle-user-area").click(function () {
 				$($(this).attr("data-target")).toggleClass("hidden");
+			});
+			$(".toggle-submenu").click(function () {
+				$(this).toggleClass("active-menu");
+				$(".menu-dropdown").addClass("hidden");
+				if ($(this).hasClass("active-menu"))
+					$($(this).attr("data-target")).toggleClass("hidden");
 			});
 		});
 	</script>
@@ -27,27 +33,32 @@
 	<div id="LeftMenu">
 		<ul class="list-group">
 			<li class="list-group-item header-menu">
-				<a class="pull-right" id="CollapseMenu">
+				<a id="CollapseMenu">
 					<span class="sr-only">Toggle navigation</span>
-					<span class="fa fa-bars collapsed-visible"></span>
-					<span class="collapsed-hidden">
+					<span class="fa fa-bars collapsed-visible pull-right bigger"></span>
+					<span class="collapsed-hidden pull-right">
 						<span class="close-bar cw-45"></span>
 						<span class="close-bar ccw-45"></span>
 					</span>
+					<p class="collapsed-hidden">Menu</p>
 				</a>
-				<span class="collapsed-hidden">Menu</span>
 			</li>
 			<li class="list-group-item section-header">
-				<span class="fa fa-home"></span>
-				<span class="collapsed-hidden">Painel</span>
-			</li>
-			<li class="list-group-item dropdown active">
-				<a href="#" class="toggle-submenu" data-target="#EditSite">
-					<span class="fa fa-edit"></span>
-					Editar site
-					<span class="fa fa-caret-down pull-right"></span>
+				<a href="#">
+					<span class="fa fa-home"></span>
+					<p class="collapsed-hidden">Painel</p>
 				</a>
+			</li>
+			<li class="list-group-item default toggle-submenu" data-target="#EditSite">
+				<a href="#">
+					<span class="fa fa-edit"></span>
+					<span class="fa fa-caret-down pull-right collapsed-hidden"></span>
+					<p class="collapsed-hidden">Editar site</p>
+				</a>
+			</li>
+			<li class="list-group-item submenu-container">
 				<ul class="list-group menu-dropdown hidden" id="EditSite">
+					<!---->
 					<li class="list-group-item"><a href="#">Data do casamento</a></li>
 					<li class="list-group-item"><a href="#">Foto e mensagem de abertura</a></li>
 					<li class="list-group-item"><a href="#">Escolha um design</a></li>
@@ -61,37 +72,37 @@
 			</li>
 			<li class="list-group-item default">
 				<a href="#">
-					<i class="fa fa-gift"></i>
-					<i class="fa fa-caret-right pull-right"></i>
-					<span class="collapsed-hidden">Lista de presentes</span>
+					<i class="fa fa-gift big"></i>
+					<i class="fa fa-caret-right pull-right collapsed-hidden"></i>
+					<p class="collapsed-hidden">Lista de presentes</p>
 				</a>
 			</li>
 			<li class="list-group-item default">
 				<a href="#">
 					<i class="fa fa-envelope"></i>
-					<i class="fa fa-caret-right pull-right"></i>
-					<span class="collapsed-hidden">RSVP</span>
+					<i class="fa fa-caret-right pull-right collapsed-hidden"></i>
+					<p class="collapsed-hidden">RSVP</p>
 				</a>
 			</li>
 			<li class="list-group-item default">
 				<a href="#">
-					<i class="fa fa-comments-o"></i>
-					<i class="fa fa-caret-right pull-right"></i>
-					<span class="collapsed-hidden">Mensagens</span>
+					<i class="fa fa-comments-o big"></i>
+					<i class="fa fa-caret-right pull-right collapsed-hidden"></i>
+					<p class="collapsed-hidden">Mensagens</p>
 				</a>
 			</li>
 			<li class="list-group-item default">
 				<a href="#">
 					<i class="fa fa-heart"></i>
-					<i class="fa fa-caret-right pull-right"></i>
-					<span class="collapsed-hidden">Mimos</span>
+					<i class="fa fa-caret-right pull-right collapsed-hidden"></i>
+					<p class="collapsed-hidden">Mimos</p>
 				</a>
 			</li>
 			<li class="list-group-item default">
 				<a href="#">
 					<i class="fa fa-group"></i>
-					<i class="fa fa-caret-right pull-right"></i>
-					<span class="collapsed-hidden">Adicionar usuário</span>
+					<i class="fa fa-caret-right pull-right collapsed-hidden"></i>
+					<p class="collapsed-hidden">Adicionar usuário</p>
 				</a>
 			</li>
 		</ul>
@@ -103,24 +114,380 @@
 					<img src="images/logo.png" alt="Casare.me" />
 				</a>
 			</div>
+			<div class="navbar-right">
+				<button class="btn btn-main navbar-btn btn-site">ver site</button>
+				<a href="#" class="badged-icon hidden-xs hidden-sm">
+					<span class="fa fa-gift fa-lg bigger"></span>
+					<small class="badge-overlap label label-success">5</small>
+				</a>
+				<a href="#" class="badged-icon hidden-xs hidden-sm">
+					<span class="fa fa-comments-o fa-lg bigger"></span>
+					<small class="badge-overlap label label-danger">17</small>
+				</a>
+				<a href="#" class="toggle-user-area user-data" data-target="#UserArea">
+					<span class="user-thumb">
+						<img src="images/john-snow.jpg" />
+					</span>
+					<span class="hidden-xs hidden-sm user-display-name">Olá, <strong>Rafael Ravena Vicente</strong></span>
+				</a>
+			</div>
 		</div>
 	</nav>
+	<div class="user-menu hidden" id="UserArea">
+		<div class="list-group list-group-inverse">
+			<span class="list-group-marker">
+				<i class="fa fa-caret-up"></i>
+			</span>
+			<a href="#" class="list-group-item">
+				<i class="fa fa-user pull-right"></i>
+				Editar perfil
+			</a>
+			<a href="#" class="list-group-item">
+				<i class="fa fa-star-o gold pull-right" title="Plano Premium"></i>
+				<i class="fa fa-star gold pull-right" title="Plano Plus + Radio"></i>
+				<i class="fa fa-star gold pull-right" title="Plano Plus"></i>
+				<i class="fa fa-star gold pull-right" title="Plano Free"></i>
+				<i class="fa fa-star gold pull-right"></i>
+				Meu plano
+			</a>
+			<a href="#" class="list-group-item">
+				<i class="fa fa-group pull-right"></i>
+				Adicionar usuário
+			</a>
+			<a href="#" class="list-group-item">
+				<i class="fa fa-sign-out pull-right"></i>
+				Sair
+			</a>
+		</div>
+	</div>
 	<div id="Content">
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac enim nulla. Pellentesque auctor, lacus ac molestie bibendum, arcu eros fermentum nunc, non congue nibh odio condimentum velit. Donec facilisis semper arcu id condimentum. Cras efficitur consequat ex at ultricies. Ut mattis sollicitudin condimentum. Sed molestie id enim quis vestibulum. Praesent dignissim semper neque ac venenatis. Aenean eget augue non ante sollicitudin consequat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec risus elit, mollis quis ex non, commodo viverra lorem.</p>
-		<p>Suspendisse potenti. Nulla et augue vel eros cursus finibus. Morbi a porttitor est. Nullam quis consectetur nulla. Maecenas dictum nulla id nulla faucibus ullamcorper. Nullam finibus libero ac leo maximus, at iaculis dolor tincidunt. Sed fermentum dapibus purus. Ut ut dui eu diam rhoncus mollis quis vel tellus. Nam eu blandit nunc, quis ornare odio. Morbi auctor diam quis lacus pulvinar accumsan. Donec ultrices imperdiet elit eget malesuada. Nullam posuere risus eget ipsum accumsan, vitae tincidunt erat maximus.</p>
-		<p>Etiam hendrerit quam sed pulvinar mollis. Fusce a quam metus. Fusce ac eleifend neque. Pellentesque vel mi in magna pellentesque finibus nec id urna. Mauris ac rutrum metus. Nulla facilisi. Etiam laoreet scelerisque convallis. Nulla varius sapien a mi dictum, sit amet fringilla neque iaculis.</p>
-		<p>Integer non porta lectus. In vehicula metus sed ipsum lacinia feugiat. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean et lectus tristique, condimentum erat vel, ultricies sem. Donec eu augue ut tortor luctus bibendum in sed nunc. Fusce mattis eros aliquam fermentum pretium. Nam pellentesque convallis interdum. Aliquam vel neque gravida mauris faucibus auctor. Phasellus maximus, metus ut rhoncus hendrerit, augue magna venenatis nulla, nec maximus magna diam molestie lectus. Phasellus scelerisque ligula eu tellus tincidunt dignissim. Vivamus iaculis lorem pharetra enim dignissim, sit amet mollis urna facilisis. Donec mattis sed nibh eget viverra. Aliquam elit turpis, dignissim lobortis ultrices placerat, mollis vitae ex. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
-		<p>Aenean accumsan euismod sapien, vel pellentesque lorem pulvinar in. Maecenas dictum nisl sit amet arcu consequat, in finibus justo tempor. Nullam ut porttitor massa, sed lacinia enim. Sed feugiat ac dui sed semper. Ut quis turpis eleifend dolor egestas convallis nec at dolor. Aliquam in egestas nunc. Sed in nulla mi. Nunc nibh diam, gravida quis turpis vitae, vehicula tempor enim. Vestibulum dictum interdum quam vel pellentesque. Nam eget nunc in mauris mollis dictum sit amet vel urna. Integer mollis pulvinar lorem vel consequat.</p>
-		<p>Curabitur fringilla magna at luctus pharetra. Nullam dictum at odio non cursus. In ullamcorper dolor pharetra lorem malesuada, et facilisis lorem bibendum. Praesent porta pretium luctus. Nullam eget dictum magna. Proin ac urna fermentum, auctor dolor eu, congue ex. Pellentesque lectus diam, convallis vitae mi non, cursus viverra arcu. Donec et velit sodales, lobortis augue vitae, mattis lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque non diam velit. Vestibulum sed molestie arcu, sit amet bibendum metus. Proin sagittis eros a aliquet vulputate. Phasellus orci sapien, suscipit nec ornare sit amet, vestibulum et orci.</p>
-		<p>Phasellus egestas lobortis lorem, id congue orci tempor eget. Maecenas in lacus dapibus, venenatis lacus in, vestibulum tortor. Nulla interdum augue tellus, sed efficitur lorem iaculis vitae. Aliquam semper, lectus ut tempor gravida, enim tortor fermentum arcu, interdum lacinia lacus tellus faucibus purus. Phasellus mollis rutrum iaculis. Morbi at orci sed sem viverra ultricies. Duis lacinia dapibus ex, vel aliquet sapien. Maecenas ac cursus urna, vel semper eros. Vivamus rhoncus euismod nunc, nec viverra ante. Maecenas tempor ullamcorper lorem, ut efficitur eros faucibus pulvinar. Maecenas sit amet tempus nibh. Nunc venenatis erat eu metus maximus, in viverra metus aliquet. Phasellus ultrices magna ligula, eget pulvinar arcu pretium et. Curabitur nec lorem nec leo facilisis aliquet.</p>
-		<p>Morbi faucibus nec dolor in euismod. Mauris ornare porta leo, at eleifend lectus vehicula vitae. Quisque tristique bibendum sem eu congue. Sed at neque quis massa aliquet tincidunt. Etiam non gravida lorem. Nullam id mi sit amet urna dapibus placerat id id nunc. Fusce blandit metus sit amet imperdiet imperdiet. Vestibulum tempor felis ante, eu auctor mauris blandit vel. Mauris feugiat aliquet diam, placerat ultricies magna eleifend in.</p>
-		<p>Sed vitae nibh ipsum. Etiam nec turpis eget felis porttitor accumsan sit amet ac nisl. Mauris hendrerit, elit quis viverra venenatis, dolor lacus tincidunt urna, sit amet rutrum dolor dui vel ante. Phasellus sed sollicitudin sem, vel condimentum nulla. Duis nec semper leo. Proin bibendum sit amet arcu malesuada convallis. Nunc ut orci aliquam, tincidunt enim quis, consectetur tortor. Mauris auctor in augue non fermentum.</p>
-		<p>Nullam ullamcorper mauris in justo sollicitudin condimentum. Aenean eros ante, hendrerit a dictum eu, dapibus vel orci. Quisque eu mattis ante. Vivamus ornare congue dui, ac finibus felis efficitur rutrum. Nullam vel felis in nisi ultrices laoreet. Nam est lectus, semper vel condimentum eu, tempus quis ipsum. Pellentesque elementum mollis dolor ac consequat.</p>
-		<p>Etiam vestibulum volutpat augue sodales lacinia. Suspendisse lorem velit, ornare at dui in, eleifend iaculis dui. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam a augue accumsan, venenatis mauris ut, egestas libero. Cras sit amet dapibus nulla. Phasellus lorem mi, finibus eget mi non, hendrerit placerat tortor. Suspendisse quis risus non massa posuere iaculis id feugiat erat. Pellentesque efficitur tortor leo, ut pellentesque massa cursus at. Duis tristique velit vel sem ullamcorper, quis posuere urna dapibus.</p>
-		<p>Aliquam tincidunt convallis congue. Fusce porttitor gravida neque, at bibendum enim elementum sed. Donec bibendum euismod pellentesque. Morbi semper ex a pretium volutpat. Donec at ex quis diam eleifend sodales. Morbi eget nisl convallis ligula tincidunt fringilla nec vitae neque. Etiam eu massa eu ipsum suscipit imperdiet id nec nibh. Duis blandit massa non mi rutrum, eu pretium felis viverra. Aliquam erat volutpat. Quisque vehicula, erat vel vestibulum pretium, leo dolor varius orci, non dapibus libero elit euismod ipsum.</p>
-		<p>Ut mollis varius orci nec luctus. Proin molestie id neque eu feugiat. Nulla ac elit eu tellus varius ultrices. Mauris sit amet facilisis quam. Fusce et nulla nisl. Pellentesque orci quam, hendrerit quis faucibus vitae, posuere a est. Fusce aliquam cursus erat, sed interdum augue ultrices luctus. Vivamus tristique suscipit mauris, in fermentum lorem scelerisque a. Vestibulum sollicitudin convallis ligula, in interdum nisl fermentum eget. Suspendisse mauris ante, pretium in venenatis at, imperdiet vel leo. Proin semper odio et ex imperdiet, et condimentum est sagittis. Vivamus luctus enim et libero placerat malesuada. Curabitur iaculis lectus ut turpis efficitur cursus. Quisque hendrerit scelerisque sollicitudin.</p>
-		<p>Proin cursus scelerisque sodales. Curabitur vel semper est, ut porttitor elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In vitae vulputate dolor. Quisque fermentum et neque id maximus. Phasellus a purus eget neque cursus viverra. Fusce ex risus, tristique at ligula sit amet, sagittis tincidunt ligula. Ut a eros ut ligula ullamcorper placerat.</p>
-		<p>Donec sodales, ex id tempus pharetra, libero eros sollicitudin eros, eget mattis mauris lacus quis orci. Mauris sed pulvinar ligula. Aenean ut nisi eget nunc consectetur molestie eu non lorem. Quisque eget ornare odio. Suspendisse efficitur, massa at porttitor dapibus, felis diam gravida risus, non faucibus nunc risus ut magna. Proin ut placerat magna, eu tristique erat. Duis eu velit tincidunt elit placerat vulputate et vel est. Nunc dignissim lobortis arcu, non imperdiet diam commodo eu. Integer sed venenatis neque. Fusce in condimentum enim. Nunc vulputate eleifend sapien suscipit tincidunt. Duis id molestie mauris. Proin condimentum lacus vel felis eleifend feugiat. Etiam porta libero ut ipsum condimentum faucibus. Pellentesque faucibus metus et libero sagittis finibus.</p>
+		<div id="ContentContainer" class="center-block">
+
+			<div class="col-xs-12 col-sm-6 col-sm-offset-3">
+				<div class="thumb-fiancee col-xs-5">
+					<img src="images/jaguar-onca.png" class="img-responsive img-circle pull-right" />
+					<div class="person-actions pull-right">
+						<button class="btn">
+							<i class="fa fa-trash"></i>
+						</button>
+						<button class="btn">
+							<i class="fa fa-camera"></i>
+						</button>
+					</div>
+				</div>
+				<div class="couple-spacer huge salmon text-center col-xs-2">&amp;</div>
+				<div class="thumb-fiance col-xs-5">
+					<img src="images/john-snow.jpg" class="img-responsive img-circle pull-left" />
+					<div class="person-actions pull-left">
+						<button class="btn">
+							<i class="fa fa-camera"></i>
+						</button>
+						<button class="btn">
+							<i class="fa fa-trash"></i>
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+			<div class="col-sm-6 col-md-3">
+				<div class="widget-panel">
+					<h3 class="widget-panel-header uppercase">Confirmação de presença</h3>
+					<div class="widget-panel-body">
+						<span><strong class="led">350</strong> convidados</span>
+						<div class="col-xs-12 group-item">
+							<span class="group-item-content bg-green white uppercase">
+								<strong class="group-sub-heading bold-sans">250</strong><br />
+								confirmados
+							</span>
+						</div>
+						<div class="col-xs-6 group-item">
+							<span class="group-item-content white uppercase bg-red">
+								<strong class="group-sub-heading bold-sans">17</strong><br />
+								<span>não<br />confirmados</span>
+							</span>
+						</div>
+						<div class="col-xs-6 group-item">
+							<span class="group-item-content white uppercase bg-gray-b">
+								<strong class="group-sub-heading bold-sans">0</strong><br />
+								<span>perderão<br />a festa</span>
+							</span>
+						</div>
+						<div class="col-xs-12 group-item">
+							<a href="#" class="underlined blue">Reconhecer convidados</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-12 col-md-6">
+				<div class="widget-panel">
+					<h3 class="widget-panel-header">RSVP</h3>
+					<div class="widget-panel-body">
+						<div class="col-xs-12 group-item">
+							<div class="group-item-content">
+								<strong class="group-heading bold-sans led">350</strong><br />
+								convidados
+							</div>
+						</div>
+						<div class="col-xs-6 group-item">
+							<p class="group-item-content bg-green white">
+								<strong class="group-sub-heading bold-sans">250</strong><br />
+								confirmados
+							</p>
+						</div>
+						<div class="col-xs-6 group-item">
+							<p class="group-item-content white bg-red">
+								<strong class="group-sub-heading bold-sans">17</strong><br />
+								<span>talvez</span>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6 col-md-3">
+				<div class="widget-panel">
+					<h3 class="widget-panel-header">RSVP</h3>
+					<div class="widget-panel-body">
+						<div class="col-xs-12 group-item">
+							<div class="group-item-content">
+								<strong class="group-heading bold-sans led">350</strong><br />
+								convidados
+							</div>
+						</div>
+						<div class="col-xs-6 group-item">
+							<p class="group-item-content bg-green white">
+								<strong class="group-sub-heading bold-sans">250</strong><br />
+								confirmados
+							</p>
+						</div>
+						<div class="col-xs-6 group-item">
+							<p class="group-item-content white bg-red">
+								<strong class="group-sub-heading bold-sans">17</strong><br />
+								<span>talvez</span>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6 col-md-3">
+				<div class="widget-panel">
+					<h3 class="widget-panel-header">Testar drop down</h3>
+					<div class="widget-panel-body">
+						<div class="col-xs-12 group-item">
+							<select>
+								<option selected="selected" disabled="disabled">Selecione uma opção</option>
+								<option>Opção</option>
+								<option>Outra opção</option>
+							</select>
+						</div>
+						<div class="col-xs-6 group-item">
+							<p class="group-item-content bg-green white">
+								<strong class="group-sub-heading bold-sans">250</strong><br />
+								confirmados
+							</p>
+						</div>
+						<div class="col-xs-6 group-item">
+							<p class="group-item-content white bg-red">
+								<strong class="group-sub-heading bold-sans">17</strong><br />
+								<span>talvez</span>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6 col-md-3">
+				<div class="widget-panel">
+					<h3 class="widget-panel-header">RSVP</h3>
+					<div class="widget-panel-body">
+						<div class="col-xs-12 group-item">
+							<div class="group-item-content">
+								<strong class="group-heading bold-sans led">350</strong><br />
+								convidados
+							</div>
+						</div>
+						<div class="col-xs-6 group-item">
+							<p class="group-item-content bg-green white">
+								<strong class="group-sub-heading bold-sans">250</strong><br />
+								confirmados
+							</p>
+						</div>
+						<div class="col-xs-6 group-item">
+							<p class="group-item-content white bg-red">
+								<strong class="group-sub-heading bold-sans">17</strong><br />
+								<span>talvez</span>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6 col-md-3">
+				<div class="widget-panel">
+					<h3 class="widget-panel-header">Testar drop down</h3>
+					<div class="widget-panel-body">
+						<div class="col-xs-12 group-item">
+							<select>
+								<option selected="selected" disabled="disabled">Selecione uma opção</option>
+								<option>Opção</option>
+								<option>Outra opção</option>
+							</select>
+						</div>
+						<div class="col-xs-6 group-item">
+							<p class="group-item-content bg-green white">
+								<strong class="group-sub-heading bold-sans">250</strong><br />
+								confirmados
+							</p>
+						</div>
+						<div class="col-xs-6 group-item">
+							<p class="group-item-content white bg-red">
+								<strong class="group-sub-heading bold-sans">17</strong><br />
+								<span>talvez</span>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6 col-md-3">
+				<div class="widget-panel">
+					<h3 class="widget-panel-header">RSVP</h3>
+					<div class="widget-panel-body">
+						<div class="col-xs-12 group-item">
+							<div class="group-item-content">
+								<strong class="group-heading bold-sans led">350</strong><br />
+								convidados
+							</div>
+						</div>
+						<div class="col-xs-6 group-item">
+							<p class="group-item-content bg-green white">
+								<strong class="group-sub-heading bold-sans">250</strong><br />
+								confirmados
+							</p>
+						</div>
+						<div class="col-xs-6 group-item">
+							<p class="group-item-content white bg-red">
+								<strong class="group-sub-heading bold-sans">17</strong><br />
+								<span>talvez</span>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6 col-md-3">
+				<div class="widget-panel">
+					<h3 class="widget-panel-header">Testar drop down</h3>
+					<div class="widget-panel-body">
+						<div class="col-xs-12 group-item">
+							<select>
+								<option selected="selected" disabled="disabled">Selecione uma opção</option>
+								<option>Opção</option>
+								<option>Outra opção</option>
+							</select>
+						</div>
+						<div class="col-xs-6 group-item">
+							<p class="group-item-content bg-green white">
+								<strong class="group-sub-heading bold-sans">250</strong><br />
+								confirmados
+							</p>
+						</div>
+						<div class="col-xs-6 group-item">
+							<p class="group-item-content white bg-red">
+								<strong class="group-sub-heading bold-sans">17</strong><br />
+								<span>talvez</span>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6 col-md-3">
+				<div class="widget-panel">
+					<h3 class="widget-panel-header">RSVP</h3>
+					<div class="widget-panel-body">
+						<div class="col-xs-12 group-item">
+							<div class="group-item-content">
+								<strong class="group-heading bold-sans led">350</strong><br />
+								convidados
+							</div>
+						</div>
+						<div class="col-xs-6 group-item">
+							<p class="group-item-content bg-green white">
+								<strong class="group-sub-heading bold-sans">250</strong><br />
+								confirmados
+							</p>
+						</div>
+						<div class="col-xs-6 group-item">
+							<p class="group-item-content white bg-red">
+								<strong class="group-sub-heading bold-sans">17</strong><br />
+								<span>talvez</span>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6 col-md-3">
+				<div class="widget-panel">
+					<h3 class="widget-panel-header">Testar drop down</h3>
+					<div class="widget-panel-body">
+						<div class="col-xs-12 group-item">
+							<select>
+								<option selected="selected" disabled="disabled">Selecione uma opção</option>
+								<option>Opção</option>
+								<option>Outra opção</option>
+							</select>
+						</div>
+						<div class="col-xs-6 group-item">
+							<p class="group-item-content bg-green white">
+								<strong class="group-sub-heading bold-sans">250</strong><br />
+								confirmados
+							</p>
+						</div>
+						<div class="col-xs-6 group-item">
+							<p class="group-item-content white bg-red">
+								<strong class="group-sub-heading bold-sans">17</strong><br />
+								<span>talvez</span>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6 col-md-3">
+				<div class="widget-panel">
+					<h3 class="widget-panel-header">RSVP</h3>
+					<div class="widget-panel-body">
+						<div class="col-xs-12 group-item">
+							<div class="group-item-content">
+								<strong class="group-heading bold-sans led">350</strong><br />
+								convidados
+							</div>
+						</div>
+						<div class="col-xs-6 group-item">
+							<p class="group-item-content bg-green white">
+								<strong class="group-sub-heading bold-sans">250</strong><br />
+								confirmados
+							</p>
+						</div>
+						<div class="col-xs-6 group-item">
+							<p class="group-item-content white bg-red">
+								<strong class="group-sub-heading bold-sans">17</strong><br />
+								<span>talvez</span>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac enim nulla. Pellentesque auctor, lacus ac molestie bibendum, arcu eros fermentum nunc, non congue nibh odio condimentum velit. Donec facilisis semper arcu id condimentum. Cras efficitur consequat ex at ultricies. Ut mattis sollicitudin condimentum. Sed molestie id enim quis vestibulum. Praesent dignissim semper neque ac venenatis. Aenean eget augue non ante sollicitudin consequat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec risus elit, mollis quis ex non, commodo viverra lorem.</p>
+			<p>Suspendisse potenti. Nulla et augue vel eros cursus finibus. Morbi a porttitor est. Nullam quis consectetur nulla. Maecenas dictum nulla id nulla faucibus ullamcorper. Nullam finibus libero ac leo maximus, at iaculis dolor tincidunt. Sed fermentum dapibus purus. Ut ut dui eu diam rhoncus mollis quis vel tellus. Nam eu blandit nunc, quis ornare odio. Morbi auctor diam quis lacus pulvinar accumsan. Donec ultrices imperdiet elit eget malesuada. Nullam posuere risus eget ipsum accumsan, vitae tincidunt erat maximus.</p>
+			<p>Etiam hendrerit quam sed pulvinar mollis. Fusce a quam metus. Fusce ac eleifend neque. Pellentesque vel mi in magna pellentesque finibus nec id urna. Mauris ac rutrum metus. Nulla facilisi. Etiam laoreet scelerisque convallis. Nulla varius sapien a mi dictum, sit amet fringilla neque iaculis.</p>
+			<p>Integer non porta lectus. In vehicula metus sed ipsum lacinia feugiat. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean et lectus tristique, condimentum erat vel, ultricies sem. Donec eu augue ut tortor luctus bibendum in sed nunc. Fusce mattis eros aliquam fermentum pretium. Nam pellentesque convallis interdum. Aliquam vel neque gravida mauris faucibus auctor. Phasellus maximus, metus ut rhoncus hendrerit, augue magna venenatis nulla, nec maximus magna diam molestie lectus. Phasellus scelerisque ligula eu tellus tincidunt dignissim. Vivamus iaculis lorem pharetra enim dignissim, sit amet mollis urna facilisis. Donec mattis sed nibh eget viverra. Aliquam elit turpis, dignissim lobortis ultrices placerat, mollis vitae ex. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+			<p>Aenean accumsan euismod sapien, vel pellentesque lorem pulvinar in. Maecenas dictum nisl sit amet arcu consequat, in finibus justo tempor. Nullam ut porttitor massa, sed lacinia enim. Sed feugiat ac dui sed semper. Ut quis turpis eleifend dolor egestas convallis nec at dolor. Aliquam in egestas nunc. Sed in nulla mi. Nunc nibh diam, gravida quis turpis vitae, vehicula tempor enim. Vestibulum dictum interdum quam vel pellentesque. Nam eget nunc in mauris mollis dictum sit amet vel urna. Integer mollis pulvinar lorem vel consequat.</p>
+			<p>Curabitur fringilla magna at luctus pharetra. Nullam dictum at odio non cursus. In ullamcorper dolor pharetra lorem malesuada, et facilisis lorem bibendum. Praesent porta pretium luctus. Nullam eget dictum magna. Proin ac urna fermentum, auctor dolor eu, congue ex. Pellentesque lectus diam, convallis vitae mi non, cursus viverra arcu. Donec et velit sodales, lobortis augue vitae, mattis lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque non diam velit. Vestibulum sed molestie arcu, sit amet bibendum metus. Proin sagittis eros a aliquet vulputate. Phasellus orci sapien, suscipit nec ornare sit amet, vestibulum et orci.</p>
+			<p>Phasellus egestas lobortis lorem, id congue orci tempor eget. Maecenas in lacus dapibus, venenatis lacus in, vestibulum tortor. Nulla interdum augue tellus, sed efficitur lorem iaculis vitae. Aliquam semper, lectus ut tempor gravida, enim tortor fermentum arcu, interdum lacinia lacus tellus faucibus purus. Phasellus mollis rutrum iaculis. Morbi at orci sed sem viverra ultricies. Duis lacinia dapibus ex, vel aliquet sapien. Maecenas ac cursus urna, vel semper eros. Vivamus rhoncus euismod nunc, nec viverra ante. Maecenas tempor ullamcorper lorem, ut efficitur eros faucibus pulvinar. Maecenas sit amet tempus nibh. Nunc venenatis erat eu metus maximus, in viverra metus aliquet. Phasellus ultrices magna ligula, eget pulvinar arcu pretium et. Curabitur nec lorem nec leo facilisis aliquet.</p>
+			<p>Morbi faucibus nec dolor in euismod. Mauris ornare porta leo, at eleifend lectus vehicula vitae. Quisque tristique bibendum sem eu congue. Sed at neque quis massa aliquet tincidunt. Etiam non gravida lorem. Nullam id mi sit amet urna dapibus placerat id id nunc. Fusce blandit metus sit amet imperdiet imperdiet. Vestibulum tempor felis ante, eu auctor mauris blandit vel. Mauris feugiat aliquet diam, placerat ultricies magna eleifend in.</p>
+			<p>Sed vitae nibh ipsum. Etiam nec turpis eget felis porttitor accumsan sit amet ac nisl. Mauris hendrerit, elit quis viverra venenatis, dolor lacus tincidunt urna, sit amet rutrum dolor dui vel ante. Phasellus sed sollicitudin sem, vel condimentum nulla. Duis nec semper leo. Proin bibendum sit amet arcu malesuada convallis. Nunc ut orci aliquam, tincidunt enim quis, consectetur tortor. Mauris auctor in augue non fermentum.</p>
+			<p>Nullam ullamcorper mauris in justo sollicitudin condimentum. Aenean eros ante, hendrerit a dictum eu, dapibus vel orci. Quisque eu mattis ante. Vivamus ornare congue dui, ac finibus felis efficitur rutrum. Nullam vel felis in nisi ultrices laoreet. Nam est lectus, semper vel condimentum eu, tempus quis ipsum. Pellentesque elementum mollis dolor ac consequat.</p>
+			<p>Etiam vestibulum volutpat augue sodales lacinia. Suspendisse lorem velit, ornare at dui in, eleifend iaculis dui. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam a augue accumsan, venenatis mauris ut, egestas libero. Cras sit amet dapibus nulla. Phasellus lorem mi, finibus eget mi non, hendrerit placerat tortor. Suspendisse quis risus non massa posuere iaculis id feugiat erat. Pellentesque efficitur tortor leo, ut pellentesque massa cursus at. Duis tristique velit vel sem ullamcorper, quis posuere urna dapibus.</p>
+			<p>Aliquam tincidunt convallis congue. Fusce porttitor gravida neque, at bibendum enim elementum sed. Donec bibendum euismod pellentesque. Morbi semper ex a pretium volutpat. Donec at ex quis diam eleifend sodales. Morbi eget nisl convallis ligula tincidunt fringilla nec vitae neque. Etiam eu massa eu ipsum suscipit imperdiet id nec nibh. Duis blandit massa non mi rutrum, eu pretium felis viverra. Aliquam erat volutpat. Quisque vehicula, erat vel vestibulum pretium, leo dolor varius orci, non dapibus libero elit euismod ipsum.</p>
+			<p>Ut mollis varius orci nec luctus. Proin molestie id neque eu feugiat. Nulla ac elit eu tellus varius ultrices. Mauris sit amet facilisis quam. Fusce et nulla nisl. Pellentesque orci quam, hendrerit quis faucibus vitae, posuere a est. Fusce aliquam cursus erat, sed interdum augue ultrices luctus. Vivamus tristique suscipit mauris, in fermentum lorem scelerisque a. Vestibulum sollicitudin convallis ligula, in interdum nisl fermentum eget. Suspendisse mauris ante, pretium in venenatis at, imperdiet vel leo. Proin semper odio et ex imperdiet, et condimentum est sagittis. Vivamus luctus enim et libero placerat malesuada. Curabitur iaculis lectus ut turpis efficitur cursus. Quisque hendrerit scelerisque sollicitudin.</p>
+			<p>Proin cursus scelerisque sodales. Curabitur vel semper est, ut porttitor elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In vitae vulputate dolor. Quisque fermentum et neque id maximus. Phasellus a purus eget neque cursus viverra. Fusce ex risus, tristique at ligula sit amet, sagittis tincidunt ligula. Ut a eros ut ligula ullamcorper placerat.</p>
+			<p>Donec sodales, ex id tempus pharetra, libero eros sollicitudin eros, eget mattis mauris lacus quis orci. Mauris sed pulvinar ligula. Aenean ut nisi eget nunc consectetur molestie eu non lorem. Quisque eget ornare odio. Suspendisse efficitur, massa at porttitor dapibus, felis diam gravida risus, non faucibus nunc risus ut magna. Proin ut placerat magna, eu tristique erat. Duis eu velit tincidunt elit placerat vulputate et vel est. Nunc dignissim lobortis arcu, non imperdiet diam commodo eu. Integer sed venenatis neque. Fusce in condimentum enim. Nunc vulputate eleifend sapien suscipit tincidunt. Duis id molestie mauris. Proin condimentum lacus vel felis eleifend feugiat. Etiam porta libero ut ipsum condimentum faucibus. Pellentesque faucibus metus et libero sagittis finibus.</p>
+		</div>
 	</div>
 </body>
 </html>

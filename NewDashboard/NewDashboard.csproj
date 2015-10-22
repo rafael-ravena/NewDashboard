@@ -57,12 +57,15 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="images\allImages.html" />
     <Content Include="images\full.png" />
     <Content Include="images\full-mobile.png" />
     <Content Include="images\full-tablet.png" />
     <Content Include="images\01a.AdminNoivos_Dash.png" />
     <Content Include="images\full-expanded.png" />
     <Content Include="images\01c.AdminNoivos_Dash_Menu fechado.png" />
+    <Content Include="images\jaguar-onca.png" />
+    <Content Include="images\john-snow.jpg" />
     <Content Include="NewDash.html" />
     <Content Include="nifty.html" />
     <Content Include="Dashboard _ Nifty - Responsive admin template._files\animate.min.css" />
@@ -99,7 +102,6 @@
     <Content Include="Dashboard _ Nifty - Responsive admin template._files\switchery.min.css" />
     <Content Include="Dashboard _ Nifty - Responsive admin template._files\switchery.min.js" />
     <Content Include="Dashboard _ Nifty - Responsive admin template._files\united-kingdom.png" />
-    <Content Include="images\john-snow.jpg" />
     <Content Include="images\logo.png" />
     <Content Include="Index.html" />
     <Content Include="Scripts\bootstrap-select.min.js" />
