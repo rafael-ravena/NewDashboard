@@ -1,0 +1,362 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<!-- Always force latest IE rendering engine or request Chrome Frame -->
+	<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+	<title>Casare Styleguide</title>
+	<link href="/assets/stylesheets/normalize.css" rel="stylesheet" type="text/css" />
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<link href="/assets/stylesheets/all.css" rel="stylesheet" type="text/css">
+
+</head>
+<body id="doc" class="index" data-spy="scroll" data-target="#navbar" cz-shortcut-listen="true">
+	<div class="hero" id="hero"></div>
+	<header>
+		<div class="title text-center">
+			<img src="/assets/images/casare_face.jpg" width="200">
+			<h1>Styleguide</h1>
+		</div>
+		<nav class="navbar navbar-default" id="navbar">
+			<div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button class="navbar-toggle collapsed" data-target="#navbar-collapse" data-toggle="collapse" type="button">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="navbar-collapse">
+					<ul class="nav navbar-nav">
+						<li class="active">
+							<a href="#hero">
+								Home
+								<span class="sr-only">(current)</span>
+							</a>
+						</li>
+						<li>
+							<a href="#grid">Grid</a>
+						</li>
+						<li>
+							<a href="#colors">Cores</a>
+						</li>
+						<li>
+							<a href="#typography">Tipografia</a>
+						</li>
+						<li>
+							<a href="#fonts">Fontes</a>
+						</li>
+						<li>
+							<a href="#buttons">Botões</a>
+						</li>
+						<li>
+							<a href="#alerts">Alertas</a>
+						</li>
+						<li>
+							<a href="#forms">Formulários</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<div class="content">
+		<section id="intro">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12">
+						<h3 class="section-heading">Introdução</h3>
+						<p>Aqui estão listados os principais componentes da landing page do Casare.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="grid">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12">
+						<h3 class="section-heading">Grid</h3>
+						<p>O sistema de gird é formado por 12 colunas. As classes col-xs-* definem a formação do grid para tamanhos de tela bem pequenos (smartphones), col-sm-* é para tamanhos pequenos, col-md-* para tamanhos médios e col-lg-* para grandes resoluções (desktop).</p>
+						<div class="grid card">
+							<div class="row">
+								<div class="col-md-1">
+									<span>.col-md-1</span>
+								</div>
+								<div class="col-md-1">
+									<span>.col-md-1</span>
+								</div>
+								<div class="col-md-1">
+									<span>.col-md-1</span>
+								</div>
+								<div class="col-md-1">
+									<span>.col-md-1</span>
+								</div>
+								<div class="col-md-1">
+									<span>.col-md-1</span>
+								</div>
+								<div class="col-md-1">
+									<span>.col-md-1</span>
+								</div>
+								<div class="col-md-1">
+									<span>.col-md-1</span>
+								</div>
+								<div class="col-md-1">
+									<span>.col-md-1</span>
+								</div>
+								<div class="col-md-1">
+									<span>.col-md-1</span>
+								</div>
+								<div class="col-md-1">
+									<span>.col-md-1</span>
+								</div>
+								<div class="col-md-1">
+									<span>.col-md-1</span>
+								</div>
+								<div class="col-md-1">
+									<span>.col-md-1</span>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-12 col-md-8">
+									<span>.col-md-8 .col-xs-12</span>
+								</div>
+								<div class="col-xs-12 col-md-4">
+									<span>.col-xs-12 .col-md-4</span>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-6 col-md-3">
+									<span>.col-xs-6 .col-md-3</span>
+								</div>
+								<div class="col-xs-6 col-md-3">
+									<span>.col-xs-6 .col-md-3</span>
+								</div>
+								<div class="col-xs-6 col-md-3">
+									<span>.col-xs-6 .col-md-3</span>
+								</div>
+								<div class="col-xs-6 col-md-3">
+									<span>.col-xs-6 .col-md-3</span>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<span>.col-md-6</span>
+								</div>
+								<div class="col-md-6">
+									<span>.col-md-6</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="colors">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12">
+						<h3 class="section-heading">Cores</h3>
+						<div class="card colors">
+							<h4>Área pública</h4>
+							<div class="row">
+								<div class="col-xs-6 col-sm-3 col-md-2">
+									<div class="thumbnail">
+										<div class="color" id="orange"></div>
+										<div class="caption text-center">
+											<h3>#f47d53</h3>
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-6 col-sm-3 col-md-2">
+									<div class="thumbnail">
+										<div class="color" id="pool-blue"></div>
+										<div class="caption text-center">
+											<h3>#37c6c1</h3>
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-6 col-sm-3 col-md-2">
+									<div class="thumbnail">
+										<div class="color" id="light-gray"></div>
+										<div class="caption text-center">
+											<h3>#f6f6f6</h3>
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-6 col-sm-3 col-md-2">
+									<div class="thumbnail">
+										<div class="color" id="dark-gray"></div>
+										<div class="caption text-center">
+											<h3>#555555</h3>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="card colors">
+							<h4>Painel administrativo dos noivos</h4>
+							<div class="row">
+								<div class="col-xs-6 col-sm-3 col-md-2">
+									<div class="thumbnail">
+										<div class="color" id="orange"></div>
+										<div class="caption text-center">
+											<h3>#f47d53</h3>
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-6 col-sm-3 col-md-2">
+									<div class="thumbnail">
+										<div class="color" id="pool-blue"></div>
+										<div class="caption text-center">
+											<h3>#37c6c1</h3>
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-6 col-sm-3 col-md-2">
+									<div class="thumbnail">
+										<div class="color" id="light-gray"></div>
+										<div class="caption text-center">
+											<h3>#f6f6f6</h3>
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-6 col-sm-3 col-md-2">
+									<div class="thumbnail">
+										<div class="color" id="dark-gray"></div>
+										<div class="caption text-center">
+											<h3>#555555</h3>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="typography">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12">
+						<h3 class="section-heading">Tipografia</h3>
+						<div class="card typography">
+							<h1>
+								h1. Lorem ipsum dolor sit amet
+								<small>Open Sans - 2.5em</small>
+							</h1>
+							<h2>
+								h2. Lorem ipsum dolor sit amet
+								<small>Pathway Gothic One - 30px</small>
+							</h2>
+							<h3>
+								h3. Lorem ipsum dolor sit amet
+								<small>Pathway Gothic One - 24px</small>
+							</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="fonts">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12">
+						<h3 class="section-heading">Fontes</h3>
+						<div class="card fonts">
+							<div class="pathway">
+								<h4>Pathway Gothic One (apenas na área pública)</h4>
+								<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+							</div>
+							<div class="open-sans">
+								<h4>Open Sans (Predominante no painel administrativo dos noivos)</h4>
+								<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="buttons">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12">
+						<h3 class="section-heading">Botões</h3>
+						<h4>Área pública</h4>
+						<p>Classes importantes: .btn-pool-blue, .btn-orange, .btn-lg.</p>
+						<div class="card buttons">
+							<div>
+								<a class="btn old-btn btn-orange" href="#">Button</a>
+							</div>
+							<div>
+								<a class="btn old-btn btn-pool-blue" href="#">Button</a>
+							</div>
+						</div>
+						<h4>Painel administrativo dos noivos</h4>
+						<div class="card buttons">
+							<div>
+								<a class="btn new-btn btn-new-red" href="#">Primary Button</a>
+								<p>Botões de conversão, que definem ações principais, tais como ações de salvamento, compra.</p>
+							</div>
+							<div>
+								<a class="btn new-btn btn-new-blue" href="#">Secondary Button</a>
+								<p>Botões secundários, representando ações menos definitivas, tais como ações de visualização, busca e sinalização.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="alerts">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12">
+						<h3 class="section-heading">Alertas</h3>
+						<div class="card alerts">
+							<div class="message">
+								<div class="notice">
+									<div class="container">Logout efetuado com sucesso.</div>
+								</div>
+							</div>
+							<div class="message">
+								<div class="alert">
+									<div class="container">Email ou senha inválidos.</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="forms">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12">
+						<h3 class="section-heading">Formulários</h3>
+						<div class="card forms">
+							<form>
+								<div class="form-group">
+									<input class="form-control" placeholder="Exemplo de input...">
+								</div>
+								<div class="form-group">
+									<input class="form-control error" placeholder="Exemplo de input...">
+									<label>Por favor, forneça um valor válido</label>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-1.11.3.min.js" type="text/javascript"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="/assets/javascripts/all.js" type="text/javascript"></script>
+
+</body>
+</html>

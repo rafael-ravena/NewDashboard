@@ -1,0 +1,88 @@
+@import url(http://fonts.googleapis.com/css?family=Pathway+Gothic+One);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+#alerts .alerts .message { color: #fff; font-size: 16px; font-weight: 700; text-align: center; width: 100%; margin-bottom: 10px; }
+#alerts .alerts .message .alert { background-color: #f47d53; padding: 0; border-radius: 0; }
+#alerts .alerts .message .notice { background-color: #37c6c1; }
+#alerts .alerts .message .container { height: 100%; padding: 15px; font-family: "Open Sans", Arial, sans-serif; }
+
+#buttons .buttons div { margin-bottom: 10px; font-family: "Open Sans"; }
+.old-btn { border-radius: 4px; cursor: pointer; font-weight: normal; margin-bottom: 0; text-align: center; vertical-align: middle; white-space: nowrap; font-family: "Pathway Gothic One", helvetica; padding: 10px 15px; display: inline-block; }
+.new-btn { border-radius: 4px; cursor: pointer; font-weight: normal; margin-bottom: 0; text-align: center; vertical-align: middle; white-space: nowrap; padding: 5px 15px; display: inline-block; }
+
+.btn-orange, .btn-pool-blue { font-size: 20px; text-transform: uppercase; color: #fff; }
+.btn-orange:hover, .btn-pool-blue:hover { color: #666; }
+.btn-orange:focus, .btn-pool-blue:focus { background-color: transparent; }
+
+.btn-orange { background-color: #f47d53; border: 2px solid #f47d53; }
+.btn-orange:focus { color: #f47d53; }
+
+.btn-new-red { text-transform: uppercase; background-color: #db7560; border-bottom-width: 2px; border-bottom-color: #ac6657; color: #FFFFFF; padding: 8px 40px; }
+.btn-new-red:hover { background-color: #e69485; border-bottom-color: #af7a6e; }
+.btn-new-red:focus { background-color: #db7560; border-bottom: none; }
+
+.btn-new-blue { background-color: #37b1d6; color: #FFFFFF; }
+.btn-new-blue:hover { background-color: #6dbbd3; }
+.btn-new-blue:focus { background-color: #1a97bb; }
+
+.btn-pool-blue { background-color: #37c6c1; border: 2px solid #37c6c1; }
+.btn-pool-blue:focus { color: #37c6c1; }
+
+.btn-lg { border-radius: 6px; line-height: 1.33; padding: 15px 60px; }
+
+.colors .thumbnail .color { width: 100%; height: 100px; }
+
+.orange { background-color: #f47d53; }
+.pool-blue { background-color: #37c6c1; }
+.light-gray { background-color: #f6f6f6; }
+.dark-gray { background-color: #555; }
+new-blue { background-color: #37b1d6; }
+new-blue-faded { background-color: #d4e0e5; }
+new-blue-lightened { background-color: #deebf0; }
+new-red { background-color: #ac6657; }
+new-red-faded { background-color: #db7560; }
+new-red-lightened { background-color: #e69485; }
+new-gray { background-color: #626262; }
+new-gray-faded { background-color: #c6ccd2; }
+new-gray-lightened { background-color: #f7f7f7; }
+
+#fonts .fonts div { margin-bottom: 30px; }
+#fonts .fonts div h4 { font-weight: bold; }
+#fonts .fonts .pathway { font-family: "Pathway Gothic One"; }
+#fonts .fonts .open-sans { font-family: "Open Sans"; }
+#fonts .fonts .helvetica { font-family: "Helvetica"; }
+
+#forms .forms input { height: 45px; }
+#forms .forms .error { background-color: #e08887; color: #fff; border-color: #dc2e2e; margin: 0; }
+#forms .forms .error::-moz-placeholder { color: white; }
+#forms .forms label { background-color: #fbe3e4; color: #dc2e2e; width: 100%; padding: 3px 10px; font-size: 0.8em; border-radius: 3px; font-weight: normal; }
+
+#grid .grid [class^="col-"] { padding: 10px 0; background-color: #ddd; border: 1px solid #ccc; }
+#grid .grid .row { margin-bottom: 15px; }
+
+#typography .typography h1 { font-family: "Open Sans"; font-size: 2.5em; }
+#typography .typography h2 { font-family: "Pathway Gothic One"; font-size: 30px; }
+#typography .typography h3 { font-family: "Pathway Gothic One"; font-size: 24px; }
+#typography .typography h4 { font-family: "Helvetica"; font-size: 18px; }
+
+body { position: relative; background-color: #f6f6f6; margin: 0; padding: 0; }
+
+section { padding-top: 50px; }
+
+.hero { height: 350px; background-image: url("/assets/images/wedding.jpg"); background-size: cover; background-position: center center; }
+
+header { background-color: #fff; padding-top: 30px; }
+header .navbar-default { background-color: #fff; border: 0; }
+header h1 { color: #f47d53; font-family: "Helvetica"; text-transform: uppercase; font-size: 40px; font-weight: bold; margin-top: 0; }
+
+.navbar .navbar-nav { display: inline-block; float: none; vertical-align: top; }
+
+.navbar .navbar-collapse { text-align: center; }
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover { background-color: #fff; color: #f47d53; font-weight: bold; }
+
+.fixed .navbar { position: fixed; width: 100%; top: 0; z-index: 99; }
+
+.section-heading { color: #ccc; font-family: "Helvetica"; text-transform: uppercase; font-weight: bolder; font-size: 36px; }
+
+.card { background-color: #fff; padding: 20px; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15); }

@@ -8,10 +8,77 @@
 	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
 	<link href="Style/bootstrap.min.css" rel="stylesheet" />
+	<link rel="stylesheet" href="style/jquery.gritter.css" />
 	<link rel="stylesheet" href="style/default.css" />
 	<script src="Scripts/jquery-2.1.1.min.js"></script>
 	<script src="Scripts/bootstrap.min.js"></script>
 	<script src="Scripts/fastclick.min.js"></script>
+	<script src="Scripts/jquery.gritter.js"></script>
+	<script language="javascript" type="text/javascript">
+		(function ($) {
+			$.fn.casareCheckbox = function () {
+				var settings = $.extend({
+					onLabelText: "On",
+					offLabelText: "Off"
+				});
+				return this.each(function () {
+					var elementId, idSelector;
+					var isChecked = $(this).prop("checked");
+					if (!$(this).attr("id")) {
+						elementId = ("Element" + Math.random()).replace(/\./g, '');
+						$(this).attr("id", elementId);
+					} else {
+						elementId = $(this).attr("id");
+					}
+					idSelector = "#" + elementId;
+					var $container = $("<div />")
+						.attr("id", "container_" + elementId)
+						.addClass("casare-checkbox-container");
+					// + settings.onBtsClass + (!isChecked ? "hide" : "")
+					var $on = $("<span />")
+						.attr("id", "on_" + elementId)
+						.addClass("casare-checkbox-state-on " + (!isChecked ? " hide" : ""))
+						.html(settings.onLabelText)
+						.click(function () {
+							$.fn.casareCheckbox.checkedToggle(elementId);
+						});
+					var $off = $("<span />")
+						.attr("id", "off_" + elementId)
+						.addClass("casare-checkbox-state-off " + (isChecked ? " hide" : ""))
+						.html(settings.offLabelText)
+						.click(function () {
+							$.fn.casareCheckbox.checkedToggle(elementId);
+						});
+					var $btn = $("<i />")
+						.attr("id", "btn_" + elementId)
+						.addClass("casare-checkbox-button-toggle set-to-" + (isChecked ? "right" : "left"))
+						.click(function () {
+							$.fn.casareCheckbox.checkedToggle(elementId);
+						});
+					$container.insertAfter($(this));
+					$container.append($on);
+					$container.append($off);
+					$container.append($btn);
+					$(this).appendTo($container);
+				});
+			};
+			$.fn.casareCheckbox.checkedToggle = function (id) {
+				var element = $("#" + id);
+				var checked = (element.prop("checked") ? false : true);
+				element.prop("checked", checked);
+				var id = element.attr("id");
+				if (checked) {
+					$("#on_" + id).removeClass("hide");
+					$("#off_" + id).addClass("hide");
+					$("#btn_" + id).removeClass("set-to-left").addClass("set-to-right");
+				} else {
+					$("#on_" + id).addClass("hide");
+					$("#off_" + id).removeClass("hide");
+					$("#btn_" + id).addClass("set-to-left").removeClass("set-to-right");
+				}
+			};
+		}(jQuery));
+	</script>
 	<script language="javascript" type="text/javascript">
 		$(document).ready(function () {
 			$("#CollapseMenu").click(function () {
@@ -26,8 +93,23 @@
 				if ($(this).hasClass("active-menu"))
 					$($(this).attr("data-target")).toggleClass("hidden");
 			});
+			$(".casare-checkbox").casareCheckbox();
+			$.gritter.add({
+				title: 'This is a sticky notice!',
+				text: 'Your message here',
+				sticky: true
+			});
 		});
 	</script>
+	<style type="text/css" media="screen">
+		.casare-checkbox-container { display: inline-block; width: 60px; height: 20px; padding: 5px; border-radius: 15px; border: 1px solid #cdcdcd; overflow: hidden; }
+		.casare-checkbox-container span { width: 60px; height: 20px; display: inline-block; position: relative; left: -5px; top: -5px; padding: 0px 10px; }
+		.casare-checkbox-state-on { background-color: #DAFFDA; }
+		.casare-checkbox-state-off { background-color: #CDCDCD; text-align: right; }
+		.casare-checkbox-button-toggle { background-color: #FFFFFF; width: 30px; height: 18px; border-radius: 15px; position: relative; top: -25px; display: inline-block; }
+		.casare-checkbox-button-toggle.set-to-left { left: -15px; }
+		.casare-checkbox-button-toggle.set-to-right { right: -33px; }
+	</style>
 </head>
 <body id="Casare">
 	<div id="LeftMenu">
@@ -162,30 +244,37 @@
 	</div>
 	<div id="Content">
 		<div id="ContentContainer" class="center-block">
-
-			<div class="col-xs-12 col-sm-6 col-sm-offset-3">
-				<div class="thumb-fiancee col-xs-5">
+			<div class="col-xs-12">
+				<input name="Checkbox-1" type="checkbox" class="casare-checkbox" />
+				<input name="Checkbox-2" type="checkbox" class="casare-checkbox" />
+				<input name="Checkbox-3" type="checkbox" class="casare-checkbox" />
+				<input name="Checkbox-4" type="checkbox" class="casare-checkbox" />
+				<input name="Checkbox-5" type="checkbox" class="casare-checkbox" />
+				<input name="Checkbox-6" type="checkbox" class="casare-checkbox" />
+			</div>
+			<div class="col-xs-12 col-sm-8 col-sm-offset-2">
+				<div class="person-actions col-xs-1">
+					<button class="btn">
+						<i class="fa fa-trash"></i>
+					</button>
+					<button class="btn">
+						<i class="fa fa-camera"></i>
+					</button>
+				</div>
+				<div class="thumb-fiancee col-xs-4">
 					<img src="images/jaguar-onca.png" class="img-responsive img-circle pull-right" />
-					<div class="person-actions pull-right">
-						<button class="btn">
-							<i class="fa fa-trash"></i>
-						</button>
-						<button class="btn">
-							<i class="fa fa-camera"></i>
-						</button>
-					</div>
 				</div>
 				<div class="couple-spacer huge salmon text-center col-xs-2">&amp;</div>
-				<div class="thumb-fiance col-xs-5">
+				<div class="thumb-fiance col-xs-4">
 					<img src="images/john-snow.jpg" class="img-responsive img-circle pull-left" />
-					<div class="person-actions pull-left">
-						<button class="btn">
-							<i class="fa fa-camera"></i>
-						</button>
-						<button class="btn">
-							<i class="fa fa-trash"></i>
-						</button>
-					</div>
+				</div>
+				<div class="person-actions col-xs-1">
+					<button class="btn">
+						<i class="fa fa-camera"></i>
+					</button>
+					<button class="btn">
+						<i class="fa fa-trash"></i>
+					</button>
 				</div>
 			</div>
 			<div class="clearfix"></div>
@@ -193,11 +282,11 @@
 				<div class="widget-panel">
 					<h3 class="widget-panel-header uppercase">Confirmação de presença</h3>
 					<div class="widget-panel-body">
-						<span><strong class="led">350</strong> convidados</span>
-						<div class="col-xs-12 group-item">
+						<span class="col-xs-12"><strong class="led">350</strong> convidados</span>
+						<div class="col-xs-6 group-item">
 							<span class="group-item-content bg-green white uppercase">
 								<strong class="group-sub-heading bold-sans">250</strong><br />
-								confirmados
+								<span>já<br />confirmados</span>
 							</span>
 						</div>
 						<div class="col-xs-6 group-item">
@@ -212,8 +301,11 @@
 								<span>perderão<br />a festa</span>
 							</span>
 						</div>
-						<div class="col-xs-12 group-item">
-							<a href="#" class="underlined blue">Reconhecer convidados</a>
+						<div class="col-xs-6 group-item">
+							<span class="group-item-content white uppercase bg-blue">
+								<strong class="group-sub-heading bold-sans">32</strong><br />
+								<span>a serem<br />reconhecidos</span>
+							</span>
 						</div>
 					</div>
 				</div>

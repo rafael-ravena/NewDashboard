@@ -64,6 +64,10 @@
     <Content Include="images\01a.AdminNoivos_Dash.png" />
     <Content Include="images\full-expanded.png" />
     <Content Include="images\01c.AdminNoivos_Dash_Menu fechado.png" />
+    <Content Include="images\gritter-light.png" />
+    <Content Include="images\gritter-long.png" />
+    <Content Include="images\gritter.png" />
+    <Content Include="images\ie-spacer.gif" />
     <Content Include="images\jaguar-onca.png" />
     <Content Include="images\john-snow.jpg" />
     <Content Include="NewDash.html" />
@@ -109,6 +113,7 @@
     <Content Include="Scripts\dashboard.js" />
     <Content Include="Scripts\fastclick.min.js" />
     <Content Include="Scripts\jquery-2.1.1.min.js" />
+    <Content Include="Scripts\jquery.gritter.js" />
     <Content Include="Scripts\jquery.sparkline.min.js" />
     <Content Include="Scripts\morris.min.js" />
     <Content Include="Scripts\nifty-demo.min.js" />
@@ -120,6 +125,7 @@
     <Content Include="Style\bootstrap-select.min.css" />
     <Content Include="Style\bootstrap.min.css" />
     <Content Include="Style\default.css" />
+    <Content Include="Style\jquery.gritter.css" />
     <Content Include="Style\nifty-demo.min.css" />
     <Content Include="Style\nifty.min.css" />
     <Content Include="Style\pace.min.css" />
